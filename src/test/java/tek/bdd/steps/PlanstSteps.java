@@ -1,21 +1,15 @@
 package tek.bdd.steps;
 
 import io.cucumber.java.en.Then;
-
-
-import io.cucumber.java.en.When;
-
+import org.junit.Assert;
+import org.openqa.selenium.WebElement;
+import tek.bdd.page.POMFactory;
+import tek.bdd.utility.SeleniumUtility;
+import org.testng.asserts.SoftAssert;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.testng.asserts.SoftAssert;
-
-import tek.bdd.page.POMFactory;
-import tek.bdd.utility.SeleniumUtility;
 
 public class PlanstSteps extends SeleniumUtility {
 POMFactory factory = new POMFactory();

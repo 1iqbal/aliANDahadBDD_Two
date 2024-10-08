@@ -1,12 +1,9 @@
 package tek.bdd.steps;
 
 import io.cucumber.java.en.Then;
-
 import io.cucumber.java.en.When;
 import net.datafaker.Faker;
-
 import org.junit.Assert;
-
 import tek.bdd.page.POMFactory;
 import tek.bdd.utility.DataGenUtility;
 import tek.bdd.utility.SeleniumUtility;
