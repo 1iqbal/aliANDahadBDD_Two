@@ -22,6 +22,12 @@ public class DataGenUtility {
 		outPut = faker.name().name();
 	}else if(input.equals("email")) {
 		outPut = faker.name().firstName()+"."+faker.name().lastName()+"@tek.us";
+
+	}else if(input.equals("password")){
+		outPut = faker.expression("#{letterify 'Ahad@2022.com'}");
+	}else if(input.equals("confirmPassword")){
+		outPut = faker.expression("#{letterify 'Ahad@2022.com'}");
+
 	}else if(input.equals("phoneNumber")) {
 		outPut = faker.phoneNumber().cellPhone();
 	}else if(input.equals("fullName")) {
@@ -72,8 +78,8 @@ public class DataGenUtility {
 		outPut = faker.expression("#{examplify '369'}");
 	}else if(input.equals("userName")){
 		outPut = faker.expression("#{examplify 'adghjk'}");
-	}else if(input.equals("password")){
-		outPut = faker.expression("#{examplify  '37afkow@aAS'}");
+//	}else if(input.equals("password")){
+//		outPut = faker.expression("#{examplify  '37afkow@aAS'}");
 
 	}else if(input.equals("option")){
 		outPut = faker.expression("#{options.option  '3', 'afkow','@', '$'}");

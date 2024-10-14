@@ -1,7 +1,5 @@
 package tek.bdd.page;
 
-import java.util.List;
-
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,21 +13,11 @@ public class AccountPage extends SeleniumUtility {
 		PageFactory.initElements(getDriver(), this);
 	}
 
-
-	
-	@FindBy(xpath="//*[@id=\"root\"]/div/div/div/div/div/div/table/tbody/tr")
-	public List<WebElement> accountTableRows;
-	
-	@FindBy(xpath="//select[@class='chakra-select css-161pkch']")
-	public WebElement accountShowBarDropDown;
-	
-	@FindBy(xpath="//div[@id=\"root\"]/div/div[3]/div/div/div/div[2]/table/tbody/tr/td[1]/button")
-	public List<WebElement> accoutTableRows10;
-	
-	@FindBy(xpath="//button[@class='chakra-button css-1kcf87u']")
-	public List<WebElement> accountTableRows25;
-	
-	@FindBy(xpath="//button[@class='chakra-button css-1kcf87u']")
-	public List<WebElement> accountTableRows50;
+	@FindBy(id = "accountLink") public WebElement accountBtnLink;
+	@FindBy(id = "nameInput") public WebElement accountProfileNameInput;
+	@FindBy(id = "personalPhoneInput") public WebElement accountProfilePhoneNumberInput;
+	@FindBy(id = "emailInput") public WebElement accountProfileEmailInput;
+	@FindBy(id = "personalUpdateBtn") public WebElement accountProfileUpdateBtn;
+	@FindBy(className = "account__information-username") public WebElement accountProfileName;
 }
 

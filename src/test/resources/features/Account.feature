@@ -1,23 +1,25 @@
-@Testana
-Feature: Search for products and order items
+@Test
+Feature: Security test scenarios
 
-  Background: 
-    When User click on Sign In Link
-    Then User enter "String" in userName field
-    Then User enter "String" in Password field
-    Then User click on Login button
-    Then User click on Accounts button
+  Background:
+    Given User is on retail website
+    When User click on Sign in option
+    And User enter email 'alisafa@gmail.com' and password 'AliSafa@2024'
+    And User click on login button
 
-  Scenario: User Naivgate to Customer Service Portal
-    And User should Verify 5 rows are present
+  Scenario: Verify user can sign in into Retail Application
+    Then User should be logged in into Account
 
-  Scenario: User Naivgate to Customer Services Portal
-    Then User click on  Show button drop down
-    Then User select 10 from drop down
-    Then User should verify 10 rows of Primary Accounts are present
-    Then User click on  Show button drop down2
-    Then User select 25 from drop down2
-    Then User should verify 25 rows of Primary Accounts are present2
-    Then User click on  Show button drop down3
-    Then User select 50 from drop down3
-    Then User should verify 50 rows of Primary Accounts are present3
+   Scenario: Verify User can update Profile Information
+    When User click on Account option
+    And User update Name ‘NameValue’ and Phone ‘PhoneValue’
+    And User click on Update button
+    Then user profile information should be updated
+
+   Scenario: Verify User can Update password
+     When User click on Account option
+     And User enter below information
+       |previousPassword| newPassword|confirmPassword|
+       |password |password |confirmPassword |
+     And User click on Change Password button
+     Then a message should be displayed ‘Password Updated Successfully’

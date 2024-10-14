@@ -1,30 +1,20 @@
-@Testana
-Feature: Tek Insurance Login
 
-  Background: 
-    When User click on Sign In Link
- 
-  Scenario: User should Login with Valid Credential Successfully
-    Then User enter "String" in userName field
-    Then User enter "String" in Password field
-    Then User click on Login button
-    And User should Validate he navigate to Customer Service Portal
+Feature: Security test scenarios
 
- 
-  Scenario: User Validate wrong credentials error message
-    Then User enter invalid "String" in field
-    Then User enter valid "String" in Password field
-    Then User click on Login button
-    Then User should validate wrong username entered message
-    Then User enter valid "String" in Email field
-    Then User enter invalid "String" in Password field
-    Then User click on Login button
-    Then User should validate wrong password entered message
+  Background:
+    Given User is on retail website
+    When User click on Sign in option
 
-  Scenario: User should Login with Valid Credential Successfully
-    Then User enter "String" in userName field
-    Then User enter "String" in Password field
-    Then User click on Login button
-    Then User click on profile Icone button
-    Then User click on Logout button
-    And User should Validate Home page is present
+  Scenario: Verify user can sign in into Retail Application
+    And User enter email 'alisafa@gmail.com' and password 'AliSafa@2024'
+    And User click on login button
+    Then User should be logged in into Account
+
+  Scenario: Verify user can create an account into Retail Website
+    And User click on Create New Account button
+    And User fill the signUp information with below data
+      | name | email | password | confirmPassword |
+      | name | email | password | confirmPassword |
+    And User click on SignUp button
+    Then User should be logged into account page
+

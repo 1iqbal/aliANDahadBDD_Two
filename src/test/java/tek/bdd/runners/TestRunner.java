@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        tags = "@Testana",
+        tags = "@Test",
         features = ("classpath:features"),
         glue="tek.bdd.steps",
         dryRun = false,
