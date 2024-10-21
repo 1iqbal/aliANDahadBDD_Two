@@ -69,6 +69,11 @@ public class DataGenUtility {
 		outPut = faker.date().past(15, TimeUnit.DAYS, "YYYY MM.dd mm:hh:ss");
 	}else if(input.equals("birthday")) {
 		outPut = faker.date().birthday(1, 25, "YYYY MM.dd");
+
+	}else if(input.equals("monthDate")){
+		outPut = faker.expression("#{numerify '#'}");
+	}else if(input.equals("yearDate")){
+		outPut = faker.expression("#{numerify '203#'}");
 		
 	}else if(input.equals("cartName")){
 		outPut = faker.expression("#{letterify '????? ?????'}");
